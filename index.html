@@ -1,0 +1,96 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+    <body class="bodyCenter">
+        <h1>Estas redirigiendote a PayU, deseas continuar?</h1>
+        <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
+            <input name="merchantId"      id="inputMerchantId"         type="hidden"     >
+            <input name="accountId"       id="inputAccountId"          type="hidden"     >
+            <input name="description"     id="inputDescription"        type="hidden"     >
+            <input name="referenceCode"   id="inputReferenceCode"      type="hidden"     > <!-- AQUI VA EL UUID DEL PEDIDO DE LA CANCION -->
+            <input name="amount"          id="inputAmount"             type="hidden"     >
+            <input name="tax"             id="inputTax"                type="hidden"     >
+            <input name="taxReturnBase"   id="inputTaxReturnBase"      type="hidden"     > <!-- ESTE VALOR ES LA RESTA DE AMOUNT - TAX  -->
+            <input name="currency"        id="inputCurrency"           type="hidden"     >
+            <input name="signature"       id="inputSignature"          type="hidden"     > <!-- TIENE EL SIGUIENTE FORMATO: md5(`${apiKey}~${merchant_id}~${reference_sale}~${value}~${currency}`) -->
+            <input name="test"            id="inputTest"               type="hidden"     >
+            <input name="buyerEmail"      id="inputBuyerEmail"         type="hidden"     > <!-- ESTE CORREO SE LE PIDE AL USUARIO -->
+            <input name="responseUrl"     id="inputResponseUrl"        type="hidden"     > <!-- LA PAGINA DE REDIRECCION DEL PAGO -->
+            <input name="confirmationUrl" id="inputConfirmationUrl"    type="hidden"     > 
+            <button name="Submit" class="btn-payu"  type="submit" ><img class="imagePayU" src="LOGOS_PAYU/LOGO1.png"></button>
+          </form>
+          <script>
+            // Obtener los parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const merchantId = urlParams.get('merchantId');
+            const accountId = urlParams.get('accountId');
+            const description= urlParams.get('description');
+            const referenceCode = urlParams.get('referenceCode');
+            const amount = urlParams.get('amount');
+            const tax = urlParams.get('tax');
+            const taxReturnBase = urlParams.get('taxReturnBase');
+            const currency = urlParams.get('currency');
+            const signature = urlParams.get('signature');
+            const test = urlParams.get('test');
+            const buyerEmail = urlParams.get('buyerEmail'); 
+            const responseUrl = urlParams.get('responseUrl'); 
+            const confirmationUrl = urlParams.get('confirmationUrl'); 
+        
+            // Acceder a los elementos del formulario y asignar los valores
+            const inputMerchantId = document.getElementById('inputMerchantId');
+            const inputAccountId = document.getElementById('inputAccountId');
+            const inputDescription = document.getElementById('inputDescription');
+            const inputReferenceCode = document.getElementById('inputReferenceCode');
+            const inputAmount = document.getElementById('inputAmount');
+            const inputTax = document.getElementById('inputTax');
+            const inputTaxReturnBase = document.getElementById('inputTaxReturnBase');
+            const inputCurrency = document.getElementById('inputCurrency');
+            const inputSignature = document.getElementById('inputSignature');
+            const inputBuyerEmail = document.getElementById('inputBuyerEmail'); 
+            const inputTest = document.getElementById('inputTest'); 
+            const inputResponseUrl = document.getElementById('inputResponseUrl');
+            const inputConfirmationUrl = document.getElementById('inputConfirmationUrl');
+        
+            if (merchantId) {
+                inputMerchantId.value = merchantId;
+            }
+            if (description) {
+                inputDescription.value = description;
+            }
+            if (referenceCode) {
+              inputReferenceCode.value = referenceCode;
+            }
+            if (accountId) {
+              inputAccountId.value = accountId;
+            }
+            if (amount) {
+              inputAmount.value = amount;
+            }
+            if (tax) {
+              inputTax.value = tax;
+            }
+            if (taxReturnBase) {
+              inputTaxReturnBase.value = taxReturnBase;
+            }
+            if (currency) {
+                inputCurrency.value = currency;
+            }
+            if (signature) {
+              inputSignature.value = signature;
+            }
+            if (buyerEmail) {
+              inputBuyerEmail.value = buyerEmail;
+            }
+            if (test) {
+              inputTest.value = test;
+            }
+            if (responseUrl) {
+              inputResponseUrl.value = responseUrl;
+            }
+            if (confirmationUrl) {
+              inputConfirmationUrl.value = confirmationUrl;
+            }
+          </script>
+    </body>
+</html>

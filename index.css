@@ -1,0 +1,27 @@
+.btn-payu {
+  background-color: #002124; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 20px; /* Redondea las esquinas del botón */
+  cursor: pointer; /* Cambia el cursor a mano al pasar el mouse sobre el botón */
+  width: 170px;
+  height: 50px;
+}
+.btn-payu:hover {
+  background-color: #a6c307; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 20px; /* Redondea las esquinas del botón */
+  cursor: pointer; /* Cambia el cursor a mano al pasar el mouse sobre el botón */
+  width: 170px;
+  height: 50px;
+}
+
+.bodyCenter {
+  text-align: center;
+}
+
+.imagePayU {
+  width: 150px;
+  height: 50px;
+}
